@@ -28,11 +28,8 @@ update-rc.d 3proxy defaults
 service 3proxy start
 echo 3proxy запущен
 
-# Установка пакетов для iptables
-apt install iptables-persistent -y
-iptables -I INPUT -p tcp --dport 9999 -j ACCEPT
-iptables -I INPUT -p tcp --dport 8088 -j ACCEPT
-iptables-save > /etc/iptables/rules.v4
+# Открываем порты vesta
+v-add-firewall-rule ACCEPT 0.0.0.0/0 8088,9999 TCP 3Proxy
 
 # Перезагрузка сервера
 echo reboot
