@@ -40,3 +40,5 @@ Uninstall:
 **Script tested on 2022-08-31:**
 
 - Debian 10 64bit
+
+Working under HestiaCP.
